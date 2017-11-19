@@ -19,16 +19,16 @@ IF %ERRORLEVEL% EQU 3 exit
 pause
 
 :15
-IF NOT EXIST "%userprofile%/AppData/roaming/.EDFBACKUPS" mkdir "%userprofile%/AppData/roaming/.EDFBACKUPS"
-robocopy "%userprofile%/Documents/My Games/EDF4.1/SAVE_DATA" "%userprofile%/AppData/roaming/.EDFBACKUPS" *.* /S /IS
+IF NOT EXIST "%userprofile%/Documents/My Games/.EDFBACKUPS" mkdir "%userprofile%/Documents/My Games/.EDFBACKUPS"
+robocopy "%userprofile%/Documents/My Games/EDF4.1/SAVE_DATA" "%userprofile%/Documents/My Games/.EDFBACKUPS" *.* /S /IS
 cls
 echo Backup sucessful.
 pause
 GOTO :5
 
 :20
-IF NOT EXIST "%userprofile%/AppData/roaming/.EDFBACKUPS" GOTO :50
-robocopy "%userprofile%/AppData/roaming/.EDFBACKUPS" "%userprofile%/Documents/My Games/EDF4.1/SAVE_DATA" *.* /S /IS
+IF NOT EXIST "%%userprofile%/Documents/My Games/.EDFBACKUPS" GOTO :50
+robocopy "%userprofile%/Documents/My Games/.EDFBACKUPS" "%userprofile%/Documents/My Games/EDF4.1/SAVE_DATA" *.* /S /IS
 cls
 echo Backup restore successful.
 pause
